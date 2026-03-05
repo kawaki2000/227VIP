@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>²²⁷VIP Secure</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
+overflow:hidden;
+}
+
+/* vidéo fond */
+
+video{
+position:fixed;
+right:0;
+bottom:0;
+min-width:100%;
+min-height:100%;
+z-index:-1;
+}
+
+/* boite */
+
+.box{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:rgba(0,0,0,0.7);
+padding:40px;
+border-radius:15px;
+text-align:center;
+width:320px;
+}
+
+/* logo animé */
+
+.logo{
+font-size:40px;
+font-weight:bold;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+
+from{
+color:#ffcc00;
+text-shadow:0 0 10px #ffcc00;
+}
+
+to{
+color:#00ffff;
+text-shadow:0 0 20px #00ffff;
+}
+
+}
+
+.viptext{
+font-size:22px;
+font-weight:bold;
+margin-top:10px;
+color:#00ffff;
+text-shadow:0 0 15px #00ffff;
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.1);}
+100%{transform:scale(1);}
+}
+
+input{
+padding:12px;
+width:80%;
+border:none;
+border-radius:8px;
+text-align:center;
+}
+
+/* boutons */
+
+button{
+margin-top:10px;
+padding:12px;
+width:200px;
+border:none;
+border-radius:8px;
+background:#ffcc00;
+cursor:pointer;
+font-weight:bold;
+}
+
+button:hover{
+background:#ffaa00;
+}
+
+#site{
+display:none;
+margin-top:20px;
+}
+
+#msg{
+color:red;
+}
+
+</style>
+
+</head>
+
+<body oncontextmenu="return false">
+
+<video autoplay muted loop>
+<source src="https://d.uguu.se/hQlMAyCf.mp4" type="video/mp4">
+</video>
+
+<audio id="music" loop>
+<source src="https://h.uguu.se/QUAqDrdZ.mp3" type="audio/mp3">
+</audio>
+
+<div class="box">
+
+<div class="logo">👑 ²²⁷VIP 👑</div>
+
+<p>Accès sécurisé</p>
+
+<input type="password" id="pass" placeholder="Mot de passe">
+
+<br>
+
+<button onclick="login()">Entrer</button>
+
+<p id="msg"></p>
+
+<div id="site">
+
+<div class="viptext">🔥 ACCÈS VIP AUTORISÉ 🔥</div>
+
+<button onclick="window.open('https://chat.whatsapp.com/E5G94PLUcbnBaz5L6p9Z8h?mode=gi_t')">
+💬 Groupe WhatsApp
+</button>
+
+<button onclick="window.open('https://github.com/kawaki227-VIP/-7-VIP')">
+💻 LISTE VIP
+</button>
+
+</div>
+
+</div>
+
+<script>
+
+var essais=0;
+
+function login(){
+
+var pass=document.getElementById("pass").value;
+
+if(pass==="@227VIP"){
+
+document.getElementById("site").style.display="block";
+document.getElementById("msg").innerHTML="";
+
+document.getElementById("music").play();
+
+}
+
+else{
+
+essais++;
+
+if(essais>=3){
+
+document.getElementById("msg").innerHTML="🚫 Accès bloqué";
+document.getElementById("pass").disabled=true;
+
+}
+
+else{
+
+document.getElementById("msg").innerHTML="❌ Mot de passe incorrect ("+(3-essais)+" essais restants)";
+
+}
+
+}
+
+}
+
+/* anti inspect */
+
+document.onkeydown=function(e){
+
+if(e.keyCode==123){
+return false;
+}
+
+}
+
+</script>
+
+<p style="position:fixed;bottom:10px;width:100%;text-align:center;font-size:12px;color:white;opacity:0.7;">
+site web by kawaki227
+</p>
+
+</body>
+</html>
